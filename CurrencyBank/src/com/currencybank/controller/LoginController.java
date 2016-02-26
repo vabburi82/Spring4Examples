@@ -2,11 +2,15 @@ package com.currencybank.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.currencybank.model.LoginUser;
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 
 @Controller
 @RequestMapping("/login")
@@ -16,7 +20,7 @@ public class LoginController {
      *
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String login(ModelMap model) {
+    public String login(ModelMap model) {	
         return "login";
     }
     /*
@@ -24,9 +28,15 @@ public class LoginController {
      *
      */
     @RequestMapping(method = RequestMethod.POST)
-    public String accountHome(@ModelAttribute LoginUser loginUser,ModelMap model) {
-    	System.out.println(loginUser);
-        return "accountHome";
-    }
- 
+    public String accountHome(ModelMap model,HttpServletRequest request, HttpServletResponse response) {
+        
+    	LoginUser loginUser = new LoginUser();
+        loginUser.setLoginID(request.getParameter("loginID"));
+        loginUser.setAcctpwd(request.getParameter("acctpwd"));
+
+    	System.out.println(loginUser.getLoginID());
+    	System.out.println(loginUser.getAcctpwd());
+        return "accounthome";
+  }
+  
 }
