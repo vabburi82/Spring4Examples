@@ -20,7 +20,7 @@ Welcome to Currency Bank !
 <table>
 	<tr>
 		<td width="150"><a href="login">Login</a></td>
-		<td width="150"><a href="#">Register</a></td>
+		<td width="150"><a href="register">Register</a></td>
 	</tr>
 </table>
 </div>

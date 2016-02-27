@@ -19,11 +19,11 @@
 <form role="form" action="login" method="post">
   <div class="form-group">
     <label for="loginID">Web Login ID:</label>
-    <input type="text" class="form-control input-sm" id="loginID">
+    <input type="text" class="form-control input-sm" id="loginID" name="loginID">
   </div>
   <div class="form-group">
     <label for="acctpwd">Password:</label>
-    <input type="password" class="form-control input-sm" id="acctpwd">
+    <input type="password" class="form-control input-sm" id="acctpwd" name="acctpwd">
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
